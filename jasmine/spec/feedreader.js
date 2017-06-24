@@ -108,7 +108,7 @@ $(function() {
         var oldFeed;
         var newFeed;
 
-        // save html after two loadings to check changes
+        // save html after first loading
         beforeEach(function(done) {
             loadFeed(0, function() {
                 oldFeed = $('.feed').html();
@@ -116,7 +116,8 @@ $(function() {
             });
 
         });
-
+    
+        // save html after second loading and check changes
         it('changes content when a new feed is loaded', function(done) {
             loadFeed(1, function() {
                 newFeed = $('.feed').html();
