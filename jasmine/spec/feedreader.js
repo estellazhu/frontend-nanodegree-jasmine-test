@@ -110,7 +110,7 @@ $(function() {
         var oldFeed;
         var newFeed;
 
-        // save html after two loading to check changes
+        // save html after two loadings to check changes
         beforeEach(function(done) {
             loadFeed(0, function() {
                 oldFeed = $('.feed').html();
