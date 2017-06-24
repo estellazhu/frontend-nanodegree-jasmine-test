@@ -69,9 +69,9 @@ $(function() {
          * clicked and does it hide when clicked again.
          */
         it('changes visibility when icon is clicked', function() {
-            $('.icon-list').click();
+            $('.icon-list').click(); // click to open menu
             expect($(document.body).hasClass('menu-hidden')).not.toBe(true);
-            $('.icon-list').click();
+            $('.icon-list').click(); // click to close menu
             expect($(document.body).hasClass('menu-hidden')).toBe(true);
         });
 
@@ -86,6 +86,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        // load one feed before testing
         beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
@@ -109,6 +110,7 @@ $(function() {
         var oldFeed;
         var newFeed;
 
+        // save html after two loading to check changes
         beforeEach(function(done) {
             loadFeed(0, function() {
                 oldFeed = $('.feed').html();
