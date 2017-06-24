@@ -108,20 +108,19 @@ $(function() {
         var oldFeed;
         var newFeed;
 
-        // save html after first loading
+        // save html after two loadings to check changes
         beforeEach(function(done) {
             loadFeed(0, function() {
                 oldFeed = $('.feed').html();
-                done();
+                loadFeed(1, function() {
+                    newFeed = $('.feed').html();
+                    done();
+                });
             });
 
         });
-    
-        // save html after second loading and check changes
+
         it('changes content when a new feed is loaded', function(done) {
-            loadFeed(1, function() {
-                newFeed = $('.feed').html();
-            });
             expect(oldFeed).not.toEqual(newFeed);
             done();
         });
