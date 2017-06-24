@@ -2,8 +2,9 @@
 
 *By Hongzi*
 
+### Description:
 Test functionalities of a feed reader using Jasmine.
 
-##### How to run:
+#### How to run:
 Open index.html in the browser.
-The status of every test is shown at the bottom of the page.
+The status of each test is shown at the bottom of the page.
